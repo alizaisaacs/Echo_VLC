@@ -62,5 +62,5 @@ def main(fps):
 			time.sleep(sleep_time)
  
 if __name__ == "__main__":
-	main(sys.argv[1])
+    app.run(host='0.0.0.0')
 
