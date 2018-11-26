@@ -10,7 +10,7 @@ config = "/sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0032/all_leds"
 start_daemon = "/usr/local/bin/ledd &"
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = TRUE
+
 	
 @app.route('/api/transmit/<uuid>', methods=['POST'])
 def transmit(uuid):
