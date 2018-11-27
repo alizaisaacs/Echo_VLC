@@ -51,6 +51,8 @@ def main(fps):
 	
 	while not set_off:
 		for cv in data_list:
+			if set_off:
+				break
 			led1.write(str(cv))
 			led1.truncate()
 			led2.write(str(cv))
