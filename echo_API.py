@@ -41,6 +41,7 @@ def off(uuid):
 	if trx is not None:
 		turn_off()
 		trx.join()
+		trx = None
 		os.system(start_daemon) 
 		return uuid
 	else:
