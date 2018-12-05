@@ -16,6 +16,12 @@ app = flask.Flask(__name__)
 def transmit(uuid):
 	global trx
 	
+	# Create SSL Key
+	os.chdir("/home/root")
+	os.system("mount -o remount rw /")
+	os.system("cat input.txt | openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem")
+	os.system("openssl x509 -in certificate.pem -noout -sha256 -fingerprint > fingerprint.txt")
+
 	# Kill daemon process
 	os.system("if (fuser %s); then kill -9 $(fuser %s); fi" % (config, config))
 
